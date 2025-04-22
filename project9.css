@@ -1,0 +1,112 @@
+*{ 
+    margin:0%;
+    padding:0%;
+    box-sizing: border-box;
+font-family:urbanist;
+}
+    
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    display:grid;
+    place-items:center; 
+    animation:star 10s  ease-in-out infinite;   
+    
+}
+.universe{
+    background-color: orange;
+    width:35vw;
+    aspect-ratio:1;
+    border-radius:15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    /* overflow:hidden;  */
+    animation:skychange 10s  ease-in-out infinite;
+}
+.sun{
+    width:20vw;
+    aspect-ratio:1;
+    overflow:hidden;
+    background-color: darkorange; 
+    border-radius:50%;
+    position: relative;
+}
+    .sun::after{
+        content:" ";
+        width: inherit;
+        aspect-ratio:1;
+        position:absolute; 
+        background-color: black;
+        border-radius: 50%;
+        animation:moonwalk 10s  ease-in-out infinite;
+
+    }
+
+@keyframes moonwalk{
+    0%{
+        translate:100%;   
+        scale:1;
+    }
+    50%{
+        translate:0%;
+        scale:0.95;
+    }
+    100%{
+        translate:-100%;
+        scale:1;
+    }
+}
+.sun{
+    overflow: hidden;
+}
+@keyframes skychange {
+    0%{
+        background-color:orange ;
+    }
+    25%{
+       background-color: yellow;
+    }
+    50%{
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 19px 38px, rgba(0, 0, 0, 0.4) 0px 15px 12px;
+    }
+    75%{
+        background-color:yellow ;
+    }
+    100%{
+       background-color: orange;
+    }
+}
+@keyframes star{
+    0%{
+        /* background-color:  antiquewhite; */
+        background-image:url("morning.jpeg");
+        background-size: cover;
+    }
+    25%{
+        /* background-color:  antiquewhite; */
+        background-image:url("evenging.jpg");
+        background-size: cover;
+    }
+    50%{
+        background-image:url("star.jpeg") ;
+        background-size: cover;
+    }
+    75%{
+        /* background-color:  antiquewhite; */
+        background-image:url("evenging.jpg");
+        background-size: cover;
+    }
+    100%{
+        /* background-color:  antiquewhite; */
+        background-image:url("morning.jpeg");
+        background-size: cover;
+    }
+}
+    
+    
+
